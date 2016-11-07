@@ -1,0 +1,17 @@
+{
+    "name": "queue-demo",
+    "version": "0.0.1",
+    "author": "Ably",
+    "license": "MIT",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "scripts": {
+        "consumer": "node ./queue-consumer.js",
+        "publisher": "node ./publisher.js"
+    },
+    "dependencies": {
+        "ably": "ably/ably-js#0.9.0-beta.1",
+        "amqplib": "^0.4"
+    }
+}
