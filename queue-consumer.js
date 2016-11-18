@@ -29,12 +29,22 @@ amqp.connect(URL, (err, conn) => {
 
     ch.consume(QUEUE, (item) => {
       const decodedEnvelope = JSON.parse(item.content);
-      const messages = Ably.Realtime.Message.fromEncodedArray(decodedEnvelope.messages);
 
-      console.log(`\nConsumed messages on channel ${decodedEnvelope.channel}:`);
-      messages.forEach((message) => {
-        console.log(` - name: ${inspect(message.name)}, payload: ${inspect(message.data)}`);
-      });
+      if(decodedEnvelope.messages) {
+        const messages = Ably.Realtime.Message.fromEncodedArray(decodedEnvelope.messages);
+        console.log(`\nConsumed messages on channel ${decodedEnvelope.channel}:`);
+
+        messages.forEach((message) => {
+          console.log(` - name: ${inspect(message.name)}, payload: ${inspect(message.data)}`);
+        });
+      } else if(decodedEnvelope.presence) {
+        const presenceMessages = Ably.Realtime.PresenceMessage.fromEncodedArray(decodedEnvelope.presence);
+        console.log(`\nConsumed presence messages on channel ${decodedEnvelope.channel}:`);
+
+        presenceMessages.forEach((presenceMsg) => {
+          console.log(` - clientId: ${inspect(presenceMsg.clientId)}, action: ${presenceMsg.action}, data: ${inspect(presenceMsg.data)}`);
+        });
+      }
 
       ch.ack(item);
       // can nack with ch.nack(item) and message will be requeued
