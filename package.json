@@ -11,7 +11,7 @@
         "publisher": "node ./publisher.js"
     },
     "dependencies": {
-        "ably": "ably/ably-js#0.9.0-beta.1",
+        "ably": "ably/ably-js#0.9.0-beta.4",
         "amqplib": "^0.4"
     }
 }
