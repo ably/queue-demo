@@ -7,11 +7,10 @@
         "node": ">=4.0"
     },
     "scripts": {
-        "consumer": "node ./queue-consumer.js",
-        "publisher": "node ./publisher.js"
+        "consumer": "node ./queue-consumer.js"
     },
     "dependencies": {
-        "ably": "ably/ably-js#0.9.0-beta.4",
+        "ably": "ably/ably-js#0.9.0-beta.6",
         "amqplib": "^0.4"
     }
 }
