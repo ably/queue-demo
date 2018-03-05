@@ -8,7 +8,7 @@ You can read more about Ably Reactor Queues at https://www.ably.io/documentation
 
 1. Go to your account dashboard on ably.io, click 'Manage app' for the app you want to try this on, go to the 'Queues' tab, and follow the instructions to set up a queue.
 
-2. Once you've set up a queue, on the same tab create a queue rule, which will define how messages will be directed into your queue.
+2. Once you've set up a queue, go to the 'Reactor' tab and create a rule of type 'Reactor Queues', which will define how messages will be directed into your queue.
 
 3. Make sure the API key you're using to consume has the capabilities to consume from queues (and the one you're using to publish has the capabilities to publish to the channel you'll be using). If you're not sure, go to the 'API Keys' tab, click 'Settings' for your key, and make sure 'Resource restrictions' to 'None'.
 
