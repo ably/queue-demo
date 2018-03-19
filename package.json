@@ -10,7 +10,7 @@
         "consumer": "node ./queue-consumer.js"
     },
     "dependencies": {
-        "ably": "ably/ably-js#0.9.0-beta.6",
+        "ably": "^1.0",
         "amqplib": "^0.4"
     }
 }
